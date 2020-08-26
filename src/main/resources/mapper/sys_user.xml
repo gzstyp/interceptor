@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sys_user">
+
+    <select id="userLogin" resultType="String" parameterType="HashMap">
+        SELECT su.kid userId FROM sys_user su,sys_user_password sup WHERE su.kid = sup.user_id AND su.user_name = #{userName} and sup.user_password = #{password} LIMIT 1
+    </select>
+
+</mapper>
